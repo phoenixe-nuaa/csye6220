@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean name="/welcome" class="controller.WelcomeController" />
+    <bean name="/login" class="controller.LoginController" />
+    <bean name="/register" class="controller.RegisterController" />
+    <bean name="/mainpage" class="controller.MainpageController" />
+    <bean name="/profile" class="controller.ProfileController" />
+    <bean name="/account" class="controller.AccountController" />
+    <bean name="/logout" class="controller.LogoutController" />
+    <bean name="/add-courses" class="controller.AddCourseController" />
+    <bean name="/manage-courses" class="controller.ManageCourseController" />
+    <bean name="/courses" class="controller.CoursesController" />
+    <bean name="/all-courses" class="controller.AllCourseController" />
+    <bean name="/my-courses" class="controller.MyCoursesController" />
+    <bean name="/all-courses-enroll" class="controller.EnrollCourseController" />
+    <bean name="/privacy" class="controller.PrivacyController" />
+    <bean name="/learn" class="controller.LearnController" />
+    <bean name="/basics1" class="controller.Basics1Controller" />
+    <bean name="/basics2" class="controller.Basics2Controller" />
+    <bean name="/transcript" class="controller.TranscriptController" />
+    <bean name="/leaderboard" class="controller.LeaderboardController" />
+    <bean name="/search-courses" class="controller.SearchCourseController" />
+    <bean name="/photo" class="controller.DisplayImageController" />
+    <bean name="/manage-users" class="controller.ManageUsersController" />
+
+    <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding">
+            <value>UTF-8</value>
+        </property>
+        <property name="maxUploadSize">
+            <value>32505856</value>
+        </property>
+        <property name="maxInMemorySize">
+            <value>4096</value>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven />
+    <mvc:resources mapping="/images/**" location="/images/" />
+</beans>

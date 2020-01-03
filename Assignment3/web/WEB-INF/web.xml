@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>ReadCSV</servlet-name>
+        <servlet-class>readCSV.ReadCSV</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadCSV</servlet-name>
+        <url-pattern>/csv.xls</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ReadExcel</servlet-name>
+        <servlet-class>readExcel.ReadExcel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadExcel</servlet-name>
+        <url-pattern>/excel.xls</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>excel</web-resource-name>
+            <url-pattern>/excel.xls</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>registered-user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    <security-role>
+        <role-name>
+            admin
+        </role-name>
+    </security-role>
+    <security-role>
+        <role-name>
+            registered-user
+        </role-name>
+    </security-role>
+</web-app>

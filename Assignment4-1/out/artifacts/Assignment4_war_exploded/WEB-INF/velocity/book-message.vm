@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>Message</title>
+</head>
+<body>
+<h3>$content</h3>
+<p><a href="/hw4/book">Return to the main page</a></p>
+</body>
+</html>

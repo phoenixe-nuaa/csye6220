@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="POJO.CoursesEntity" table="courses" schema="duodb">
+        <id name="courseId">
+            <column name="course_id" sql-type="int(11)"/>
+            <generator class="increment" />
+        </id>
+        <property name="coursename">
+            <column name="coursename" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="whichlanguage">
+            <column name="whichlanguage" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="whichlevel">
+            <column name="whichlevel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <set name="users" table="users_courses" schema="duodb" fetch="select" lazy="false" cascade="all">
+            <key column="course_id" />
+            <many-to-many class="POJO.UsersEntity" column="user_id" />
+        </set>
+    </class>
+</hibernate-mapping>

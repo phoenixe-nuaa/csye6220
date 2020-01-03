@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="POJO.UsersEntity" table="users" schema="duodb">
+        <id name="userId">
+            <column name="user_id" sql-type="int(11)"/>
+            <generator class="increment" />
+        </id>
+        <property name="username">
+            <column name="username" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="upassword">
+            <column name="upassword" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="age">
+            <column name="age" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="gender">
+            <column name="gender" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="country">
+            <column name="country" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="location">
+            <column name="location" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <set name="courses" table="users_courses" schema="duodb" fetch="select" lazy="false" cascade="all">
+            <key column="user_id" />
+            <many-to-many class="POJO.CoursesEntity" column="course_id" />
+        </set>
+    </class>
+</hibernate-mapping>

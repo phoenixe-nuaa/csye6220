@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.url">jdbc:mysql://localhost/duodb</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <mapping class="POJO.UsersEntity"/>
+        <mapping resource="UsersEntity.hbm.xml"/>
+        <mapping class="POJO.CoursesEntity"/>
+        <mapping resource="CoursesEntity.hbm.xml"/>
+        <mapping resource="CoursesEntity.hbm.xml"/>
+        <mapping resource="UsersEntity.hbm.xml"/>
+        <mapping resource="UsersCoursesEntity.hbm.xml"/>
+        <mapping class="POJO.UsersCoursesEntity"/>
+        <mapping resource="GradesEntity.hbm.xml"/>
+        <mapping class="POJO.GradesEntity"/>
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

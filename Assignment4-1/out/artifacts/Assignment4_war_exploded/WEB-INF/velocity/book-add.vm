@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Add</title>
+</head>
+<body>
+<form action="/hw4/bookadd">
+    <table>
+        <tr>
+            <th>ISBN</th>
+            <th>Book Title</th>
+            <th>Authors</th>
+            <th>Price</th>
+        </tr>
+        #foreach($i in [1..$num])
+            <tr>
+                <td><input type="text" name=$i>
+                <td><input type="text" name=$i>
+                <td><input type="text" name=$i>
+                <td><input type="text" name=$i>
+            </tr>
+        #end
+    </table>
+    </tr>
+    <input type="submit" name="submit" value="Add Books"></submit>
+</form>
+
+</body>
+</html>
