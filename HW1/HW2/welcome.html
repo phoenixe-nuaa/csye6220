@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <h1>Registration Form</h1>
+</head>
+<body>
+  <form method="post" action="register2" enctype="multipart/form-data">
+    Email: <input type="mail" name="email"><br>
+    Password: <input type="password" name="password"><br>
+    Confirm Password: <input type="password" name="confirm password"><br>
+    Upload Your Picture: <input type="file" name="photo"><br>
+    Gender:<input type="radio" value="male" name="gender">Male
+    <input type="radio" value="female" name="gender">Female<br>
+    <label for="country">Select Country: </label>
+    <!-- <span style="color: red !important; display: inline; float: none;">*</span>       -->
+            <select id="country" name="country" class="form-control">
+                <option value="united states">United States</option>
+                <option value="china">China</option>
+                <option value="other">Other</option>
+            </select><br>
+    Hobby:<input type="checkbox" name="hobby" value="cricket">Cricket
+    <input type="checkbox" name="hobby" value="football">Football<br>
+    Address:<textarea rows="4" cols="25" name="address"></textarea><br>
+    <input type="submit" name="submit">
+  </form>
+</body>
+</html>

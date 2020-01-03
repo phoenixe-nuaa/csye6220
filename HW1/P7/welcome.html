@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <style>
+  .sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    /* background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  .main {
+    margin-top: 0px;
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 0px 20px;
+  }
+  .item1 {
+    margin-top: 10px;
+  }
+  .item2 {
+    margin-top: 10px;
+  }
+  .item3 {
+    margin-top: 10px;
+  }
+  .submit {
+    margin-top: 10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="sidenav">
+    <p><a href="#" onclick="book()">Books</a></p>
+    <p><a href="#" onclick="music()">Music</a></p>
+    <p><a href="#" onclick="computers()">Computers</a></p>
+    <p><a href="store?type=cart" onclick="">View Cart</a></p>
+  </div>
+  <div class="main">
+      <p id="subtitle">Shop for Books</p>
+    <form class="content" action="store" method="post">
+      <div class="item1">
+        <label id="b1">
+          <input type="checkbox" name="item" value="book1">Book 1
+        </label>
+      </div>
+      <div class="item2">
+        <label id="b2">
+          <input type="checkbox" name="item" value="book2">Book 2
+        </label>
+      </div>
+      <div class="item3">
+        <label id="b3">
+          <input type="checkbox" name="item" value="book3">Book 3
+        </label>
+      </div>
+      <div class="submit">
+        <input type="submit" name="add" value="Add to cart">
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  function book() {
+    document.getElementById("subtitle").innerHTML = "Shop for Books"
+    document.getElementById("b1").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"book1\">Book 1"
+    document.getElementById("b2").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"book2\">Book 2"
+    document.getElementById("b3").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"book3\">Book 3"
+  }
+  function music() {
+    document.getElementById("subtitle").innerHTML = "Shop for CDs"
+    document.getElementById("b1").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"cd1\">CD 1"
+    document.getElementById("b2").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"cd2\">CD 2"
+    document.getElementById("b3").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"cd3\">CD 3"
+  }
+  function computers() {
+    document.getElementById("subtitle").innerHTML = "Shop for Laptops"
+    document.getElementById("b1").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"laptop1\">Laptop 1"
+    document.getElementById("b2").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"laptop2\">Laptop 2"
+    document.getElementById("b3").innerHTML = "<input type=\"checkbox\" name=\"item\" value=\"laptop3\">Laptop 3"
+  }
+</script>
+</html>

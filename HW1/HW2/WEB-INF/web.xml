@@ -1,0 +1,66 @@
+<web-app>
+	<servlet>
+		<servlet-name>P2</servlet-name>
+		<servlet-class>MyGetHeader</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>P2</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>P3</servlet-name>
+		<servlet-class>FormData3</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>P3</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>P3-1</servlet-name>
+		<servlet-class>PrintImage</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>P3-1</servlet-name>
+		<url-pattern>/images/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>P4</servlet-name>
+		<servlet-class>FormData4</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>P4</servlet-name>
+		<url-pattern>/register1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>P5</servlet-name>
+		<servlet-class>FormData5</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>P5</servlet-name>
+		<url-pattern>/register2</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>welcome.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>upload.location</param-name>
+		<param-value>/usr/local/apache-tomcat9/webapps</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>sub.location</param-name>
+		<param-value>/HW1/images/</param-value>
+	</context-param>
+
+</web-app>
